@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author"	content="Max8086 104195667" />
+    <title>vender lists</title>
+    <!-- css -->
+    <link href = "" rel ="stylesheet"> 
+</head>
+<body>
+<div class="container" style="padding-top: 20px">
+    <div class=""> 
+        <div class="">
+            <?php while($rows = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
+            <div class="panel-heading">                  
+                <h3 class="panel-title">Inventory ID: <?php echo $rows['id'] ?></h3>
+            </div>
+            <div class="panel-body">
+                <table class="">
+                    <tbody>
+                        <tr>
+                            <td class="form-group">
+                                <label for="first_name" class="">name:</label><div class="col-sm-10"><?php echo $rows['supplier_name'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="last_name" class="">contact:</label><div class="col-sm-10"><?php echo $rows[' supplier_contact'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="Age" class="col-sm-2 control-label">address:</label><div class="col-sm-10"><?php echo $rows['supplier_address'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="Gender" class="col-sm-2 control-label">item_name:</label><div class="col-sm-10"><?php echo $rows[' item_name'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="Phone" class=""> item_quantity:</label><div class="col-sm-10"><?php echo $rows['item_quantity'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="unit_price" class="">unit_price:</label><div class="col-sm-10"><?php echo $rows['unit_price'] ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-group">
+                                <label for="total_cost" class="">total_cost:</label><div class="col-sm-10"><?php echo $rows['total_cost'] ?></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <?php } ?>
+        </div>  
+    </div>
+</div> 
+</body>
+</html>

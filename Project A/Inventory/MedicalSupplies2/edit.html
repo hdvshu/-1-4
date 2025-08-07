@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="is-centered is-bold">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Max8086">
+    <title>Edit</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<div class="container" style="padding-top: 20px">
+    <div class="">
+        <div class="">
+            <div class="">
+                <h3 class="">Edit</h3>
+            </div>
+            <div class="">
+                <form class="" role="form" method="POST" action="updateInventory.php">
+                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <label for="name" class="">
+                                    Item Name:
+                                </label>
+                                <div class="">
+                                    <input type="text" class="" name="name" id="name" value="<?php echo $data['ItemName'] ?>">
+                                </div>
+                            </div>
+                            <div class="">
+                                <label for="Supplier" class="">
+                                    Supplier:
+                                </label>
+                                <div class="">
+                                    <input type="text" class="" name="Supplier" id="Supplier" value="<?php echo $data['Supplier'] ?>">
+                                </div>
+                            </div> 
+                            <div class="">
+                                <label for="QUANTITY" class="">
+                                    QUANTITY:
+                                </label>
+                                <div class="">
+                                    <input type="text" class="" name="QUANTITY" id="QUANTITY" value="<?php echo $data['Quantity'] ?>">
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <button type="submit" class="">
+                                    <i class=""></i>
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

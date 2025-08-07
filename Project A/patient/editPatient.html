@@ -1,0 +1,198 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manage Patients</title>
+<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+<link rel="stylesheet" href="../patient.css">
+</head>
+<body>
+    
+    <div class="sidebar">   
+        <div class="sidebar-brand">
+            <h2><span class="las la-clinic-medical"></span> <span>Swin Aged Care</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="homepage.html" class=""><span class="las la-igloo"></span>
+                    <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="" class="active"><span class="lab la-accessible-icon"></span>
+                    <span>Patients</span></a>
+                    <div class="sub-menu">
+                        <a href="addpatient.html" class="sub-item1"><i class="las la-angle-right"></i>Register patient</a>
+                        <a href="patientindex.php" class="sub-item"><i class="las la-angle-right"></i>View patients</a>
+                        <a href="patientindex.php" class="sub-item"><i class="las la-angle-right"></i>Manage Patient</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="employees.html"><span class="las la-users"></span>
+                    <span>Employees</span></a>
+                </li>
+                <li>
+                    <a href="Roster.html"><span class="las la-clipboard-list"></span>
+                    <span>Roster</span></a>
+                </li>
+                <li>
+                    <a href="Service.html"><span class="las la-bell"></span>
+                    <span>Services</span></a>
+                </li>
+                <li>
+                    <a href="Inventory.html"><span class="las la-receipt"></span>
+                    <span>Inventory</span></a>
+                </li>
+                <li>
+                    <a href="account.html"><span class="las la-user-circle"></span>
+                    <span>Accounts</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                    Dashboard
+                </label>
+            </h2>
+
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="Search here">
+            </div>
+
+            <div class="user-wrapper">
+                <img src="Profile.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4>John Doe</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <a href="patientindex.php"><i class="las la-arrow-circle-left"></i></a>
+            <h2>Manage Patient Detials</h2>
+
+            <div class="form-container">
+                <form role="form" method="POST" action="updatePatient.php">
+                    <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+                    <div class="section">
+                        <h3>Personal Information</h3>
+                        <div class="input-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="first_name" value="<?php echo $data['first_name'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="last_name" value="<?php echo $data['last_name'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" name="address" value="<?php echo $data['address'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="address">Email:</label>
+                            <input type="text" id="address" name="address" value="<?php echo $data['email'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="phone-number">Phone Number:</label>
+                            <input type="tel" id="phone-number" name="phone" value="<?php echo $data['phone'] ?>">
+                         </div>
+                         <div class="input-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" id="dob" name="dob"  value="<?php echo $data['dob'] ?>">
+                         </div>
+                         <div class="input-group">
+                                <label>Gender:</label>
+                                <select name="gender">
+                                    <option value="female"  <?php if($data["gender"] == "female"){ echo 'selected'; } ?> >female</option>
+                                    <option value="male" <?php if($data["gender"] == "male"){ echo 'selected'; } ?> >male</option>
+                                </select>
+                            </div>
+                    </div>
+        
+                    <div class="section">
+                        <h3>Emergency Contact</h3>
+
+                        <div class="input-group">
+                            <label for="emergency-name">Full Name:</label>
+                            <input type="text" id="emergency-name" name="emergency_name" value="<?php echo $data['emergency_name'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="relationship">Relationship:</label>
+                            <input type="text" id="relationship" name="relationship" value="<?php echo $data['relationship'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="relationship">Address:</label>
+                            <input type="text" id="address1" name="address1" value="<?php echo $data['address1'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="emergency-phone">Phone Number:</label>
+                            <input type="tel" id="emergency-phone" name="emergency_phone" value="<?php echo $data['emergency_phone'] ?>">
+                        </div>
+                    </div>
+        
+                    <div class="section">
+                        <h3>Medical Condition</h3>
+                        <div class="input-group">
+                            <label for="medical-ailment">Medical Ailment:</label>
+                            <input type="text" id="medical-ailment" name="medical_ailment" value="<?php echo $data['medical_ailment'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="blood-type">Blood Type:</label>
+                            <input type="text" id="blood-type" name="blood_type" value="<?php echo $data['blood_type'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="allergies">Allergies:</label>
+                            <input type="text" id="allergies" name="allergies" value="<?php echo $data['allergies'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="surgery-history">Surgery History:</label>
+                            <input type="text" id="surgery-history" name="surgery_history" value="<?php echo $data['surgery_history'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="smoke-history">Smoke History:</label>
+                            <input type="text" id="smoke-history" name="smoke_history" value="<?php echo $data['smoke_history'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label>Alcoholic?</label> 
+                            <select name="drink_alcohol">
+                                <option value="Yes"  <?php if($data["drink_alcohol"] == "yes"){ echo 'selected'; } ?> >Yes</option>
+                                <option value="No" <?php if($data["drink_alcohol"] == "no"){ echo 'selected'; } ?> >Never</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="section">
+                        <h3>Healthcare Information</h3>
+
+                        <div class="input-group">
+                            <label for="medicare-no">Medicare No:</label>
+                            <input type="text" id="medicare-no" name="medicare_no" value="<?php echo $data['medicare_no'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="private-insurance">Private Insurance:</label>
+                            <input type="text" id="private-insurance" name="private_insurance" value="<?php echo $data['private_insurance'] ?>">
+                        </div>
+                        <div class="input-group">
+                            <label for="insurance-no">Insurance No:</label>
+                            <input type="text" id="insurance-no" name="insurance_no" value="<?php echo $data['insurance_no'] ?>">
+                        </div>
+                    </div>
+        
+                    <div class="button-group">
+                        <button type="submit">Submit</button>
+                        <!-- <button>Delete Profile</button> -->
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
